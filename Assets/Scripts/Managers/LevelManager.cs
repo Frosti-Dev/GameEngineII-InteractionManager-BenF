@@ -9,61 +9,6 @@ public class LevelManager : MonoBehaviour
     private Dictionary<string, string> loadedSceneBySlot = new();
     private bool isBusy = false;
     
-    #region buttons
-    public void ToMainMenu()
-    {
-        ServiceHub.Instance.LevelManager
-            .NewTransition()
-            .Load(SceneDataBase.Slots.MainMenu, SceneDataBase.Scenes.MainMenu, setActive: true)
-            .Unload(SceneDataBase.Slots.Session)
-            .Unload(SceneDataBase.Slots.SessionContent)
-            .WithClearUnusedAssets()
-            .WithOverlay()
-            .Perform();
-
-        ServiceHub.Instance.GameStateManager.MainMenu();
-    }
-
-    public void ToStart()
-    {
-        ServiceHub.Instance.LevelManager
-            .NewTransition()
-            .Load(SceneDataBase.Slots.Session, SceneDataBase.Scenes.Session)
-            .Load(SceneDataBase.Slots.SessionContent, SceneDataBase.Scenes.Gameplay, setActive: true)
-            .Unload(SceneDataBase.Slots.MainMenu)
-            .WithOverlay()
-            .Perform();
-
-        ServiceHub.Instance.GameStateManager.Gameplay();
-    }
-
-    public void ToGameplay()
-    {
-        ServiceHub.Instance.LevelManager
-            .NewTransition()
-            .Load(SceneDataBase.Slots.SessionContent, SceneDataBase.Scenes.Gameplay, setActive: true)
-            .WithOverlay()
-            .Perform();
-
-        ServiceHub.Instance.GameStateManager.Gameplay();
-    }
-
-    public void ToGameOver()
-    {
-        ServiceHub.Instance.LevelManager
-            .NewTransition()
-            .Load(SceneDataBase.Slots.SessionContent, SceneDataBase.Scenes.GameOver, setActive: true)
-            .WithOverlay()
-            .Perform();
-
-        ServiceHub.Instance.GameStateManager.GameOver();
-    }
-
-    public void Quit()
-    {
-        Application.Quit();
-    }
-    #endregion
 
     public SceneTransitionPlan NewTransition()
     {

@@ -251,8 +251,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1747078024971314692, guid: feabb74a2327c574b8f721084824eff2, type: 3}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+      - m_Target: {fileID: 6419474664813663998, guid: a32cb0d3ef6bba247971823a3a428ba8, type: 3}
+        m_TargetAssemblyTypeName: InteractionManager, Assembly-CSharp
         m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
@@ -521,8 +521,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1747078024971314692, guid: feabb74a2327c574b8f721084824eff2, type: 3}
-        m_TargetAssemblyTypeName: LevelManager, Assembly-CSharp
+      - m_Target: {fileID: 6419474664813663998, guid: a32cb0d3ef6bba247971823a3a428ba8, type: 3}
+        m_TargetAssemblyTypeName: InteractionManager, Assembly-CSharp
         m_MethodName: ToStart
         m_Mode: 1
         m_Arguments:
